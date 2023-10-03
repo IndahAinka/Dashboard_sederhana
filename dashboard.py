@@ -71,4 +71,7 @@ def create_rfm_df(df):
     
     return rfm_df
 
+#  load berkas all_data.csv sebagai sebuah DataFrame 
+all_df = pd.read_csv("all_data.csv")
+
     
