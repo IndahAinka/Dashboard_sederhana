@@ -35,4 +35,14 @@ def create_bygender_df(df):
     
     return bygender_df
 
+# create_byage_df() merupakan helper function yang digunakan untuk menyiapkan byage_df
+def create_byage_df(df):
+    byage_df = df.groupby(by="age_group").customer_id.nunique().reset_index()
+    byage_df.rename(columns={
+        "customer_id": "customer_count"
+    }, inplace=True)
+    byage_df['age_group'] = pd.Categorical(byage_df['age_group'], ["Youth", "Adults", "Seniors"])
+    
+    return byage_df
+
     
