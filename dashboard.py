@@ -97,4 +97,8 @@ with st.sidebar:
         value=[min_date, max_date]
     )
 
+# menyimpan data yang telah di filter ke dalam main_df
+main_df = all_df[(all_df["order_date"] >= str(start_date)) & 
+                (all_df["order_date"] <= str(end_date))]
+
     
