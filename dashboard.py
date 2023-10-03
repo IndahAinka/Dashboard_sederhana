@@ -101,4 +101,12 @@ with st.sidebar:
 main_df = all_df[(all_df["order_date"] >= str(start_date)) & 
                 (all_df["order_date"] <= str(end_date))]
 
+# memanggil helper function 
+daily_orders_df = create_daily_orders_df(main_df)
+sum_order_items_df = create_sum_order_items_df(main_df)
+bygender_df = create_bygender_df(main_df)
+byage_df = create_byage_df(main_df)
+bystate_df = create_bystate_df(main_df)
+rfm_df = create_rfm_df(main_df)
+
     
