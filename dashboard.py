@@ -45,4 +45,14 @@ def create_byage_df(df):
     
     return byage_df
 
+
+# create_bystate_df() digunakan untuk menyiapkan bystate_df
+def create_bystate_df(df):
+    bystate_df = df.groupby(by="state").customer_id.nunique().reset_index()
+    bystate_df.rename(columns={
+        "customer_id": "customer_count"
+    }, inplace=True)
+    
+    return bystate_df
+
     
