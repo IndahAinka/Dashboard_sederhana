@@ -26,6 +26,13 @@ def create_sum_order_items_df(df):
     sum_order_items_df = df.groupby("product_name").quantity_x.sum().sort_values(ascending=False).reset_index()
     return sum_order_items_df
 
-
+# create_bygender_df() digunakan untuk menyiapkan bygender_df
+def create_bygender_df(df):
+    bygender_df = df.groupby(by="gender").customer_id.nunique().reset_index()
+    bygender_df.rename(columns={
+        "customer_id": "customer_count"
+    }, inplace=True)
+    
+    return bygender_df
 
     
